@@ -1,0 +1,484 @@
+/* left 메뉴 1depth 공백 제거 */
+.skin-blue .sidebar-menu>li>a {border-left:0px;}
+
+/* 상세보기 */
+.scrollBar::-webkit-scrollbar {
+	width: 3px;
+}
+.scrollBar::-webkit-scrollbar-thumb {
+	background-color: var(--charcoal-grey);
+	border-radius: 15px;
+}
+.scrollBar::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 15px;
+}
+.itemViewBox {
+	--charcoal-grey: #353c49;
+}
+.itemViewBox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1031;
+	font-family: 'Noto Sans KR';
+	background: #fff;
+	overflow: hidden;
+	/* overflow-y: auto; */
+	display: none;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transform-origin: right;
+	transform-origin: right;
+}
+.itemViewBox ul {
+	margin: 0;
+	padding: 0;
+}
+.showItem {
+	display: block;
+	-webkit-animation: slideItemBox 0.7s ease-in forwards;
+	animation: slideItemBox 0.7s ease-in forwards;
+}
+.itemViewInner,
+.itemViewTop {
+	opacity: 0;
+}
+.itemViewTop {
+	position: relative;
+	z-index: 1;
+}
+.itemViewInner {
+	overflow: hidden;
+	overflow-y: auto;
+	height: 100%;
+}
+.showItem .itemViewInner {
+	-webkit-animation: slideItemInner .6s forwards 0.5s ease-in-out;
+	animation: slideItemInner .6s forwards 0.5s ease-in-out;
+}
+.showItem .itemViewTop {
+	-webkit-animation: slideItemClose .6s forwards 1s ease-in-out;
+	animation: slideItemClose .6s forwards 1s ease-in-out;
+}
+@-webkit-keyframes slideItemBox {
+	from {
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+
+@keyframes slideItemBox {
+	from {
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+}
+
+@-webkit-keyframes slideItemInner {
+	from {
+		/* -webkit-transform: translate(-50%, -40%);
+				transform: translate(-50%, -40%); */
+		/* -webkit-transform: translate(calc(-50% + 0.1px), calc(-40% + 0.1px));
+				transform: translate(calc(-50% + 0.1px), calc(-40% + 0.1px)); */
+		top: 50px;
+		opacity: 0;
+	}
+	to {
+		/* -webkit-transform: translate(-50%, -50%);
+				  transform: translate(-50%, -50%); */
+		/* -webkit-transform: translate(calc(-50% + 0.1px), calc(-50% + 0.1px));
+				transform: translate(calc(-50% + 0.1px), calc(-50% + 0.1px)); */
+		top: 20px;
+		opacity: 1;
+	}
+}
+
+@keyframes slideItemInner {
+	from {
+		/* -webkit-transform: translate(-50%, -40%);
+				transform: translate(-50%, -40%); */
+		/* -webkit-transform: translate(calc(-50% + 0.1px), calc(-40% + 0.1px));
+				transform: translate(calc(-50% + 0.1px), calc(-40% + 0.1px)); */
+		top: 50px;
+		opacity: 0;
+	}
+	to {
+		/* -webkit-transform: translate(-50%, -50%);
+				  transform: translate(-50%, -50%); */
+		/* -webkit-transform: translate(calc(-50% + 0.1px), calc(-50% + 0.1px));
+				transform: translate(calc(-50% + 0.1px), calc(-50% + 0.1px)); */
+		top: 20px;
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes slideItemClose {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideItemClose {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.viewVisual {
+	width: 100%;
+}
+.itemViewBox .contentArea {
+	overflow: hidden;
+	clear: both;
+	padding: 35px 40px 25px 20px;
+	border-bottom: 8px solid #f2f3f3;
+}
+.itemViewBox .contentArea .category {
+	display: block;
+	font-size: 12px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.2;
+	letter-spacing: -0.3px;
+	color: #c1c3cf;
+}
+.itemViewBox .contentArea .title {
+	display: block;
+	margin: 16px 0 10px 0;
+	font-size: 23px;
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: -0.58px;
+	color: var(--charcoal-grey);
+}
+.itemViewBox .contentArea .desc {
+	margin: 10px 0 24px 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.79;
+	letter-spacing: -0.35px;
+	color: #94979b;
+}
+.itemViewBox .contentArea .hashtag li {
+	float: left;
+	display: inline-block;
+	height: 38px;
+	line-height: 36px;
+	margin: 0 4px 7px 0;
+	padding: 0 10px;
+	border-radius: 19px;
+	border: solid 1px #ffd6f7;
+	background-color: #fff5fd;
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: -0.3px;
+	text-align: center;
+	color: #ec80d6;
+	box-sizing: border-box;
+}
+.itemViewBox .videoArea .title {
+	display: block;
+	margin: 28px 20px 14px 20px;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.53;
+	letter-spacing: -0.38px;
+	color: var(--charcoal-grey);
+}
+.itemViewBox .videoArea .videoBox {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.25%;
+}
+.itemViewBox .videoArea .videoBox iframe,
+.itemViewBox .videoArea .videoBox video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.itemViewBox .infoArea {
+	padding: 40px 20px 18px;
+	overflow: hidden;
+	clear: both;
+}
+.itemViewBox .infoArea dt {
+	float: left;
+	display: inline-block;
+	clear: both;
+	height: 22px;
+	margin: 0 10px 19px 0;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.53;
+	letter-spacing: -0.38px;
+	color: var(--charcoal-grey);
+}
+.itemViewBox .infoArea dd {
+	margin: 0 0 19px 10px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.53;
+	letter-spacing: -0.38px;
+	text-align: left;
+	color: var(--charcoal-grey);
+}
+.itemViewBox .noti {
+	display: block;
+	padding: 30px 34px 50px 20px;
+	background-color: #f2f3f3;
+}
+.itemViewBox .noti > em {
+	display: block;
+	margin-bottom: 15px;
+	font-size: 14px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.64;
+	letter-spacing: -0.35px;
+	color: var(--charcoal-grey);
+}
+.itemViewBox .noti li {
+	list-style: none;
+	position: relative;
+	margin-bottom: 10px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.57;
+	letter-spacing: -0.35px;
+	color: #94979b;
+	padding-left: 9px;
+}
+.itemViewBox .noti li::before {
+	content: '-';
+	position: absolute;
+	left: 0;
+	top: -1px;
+}
+.etcNoti {
+	display: block;
+	font-size: 12px;
+	font-weight: 400;
+	color: #ef1111;
+	margin: 10px 0 0 21px;
+}
+
+.btnViewClose {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	box-sizing: border-box;
+	cursor: pointer;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+.btnViewClose .con {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: -3px;
+}
+.btnViewClose .bar {
+	display: block;
+	height: 2px;
+	width: 18px;
+	background: #fff;
+	margin: 3px auto;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+.btnViewClose .top {
+	-webkit-transform: translateY(6px) rotateZ(45deg);
+	-moz-transform: translateY(6px) rotateZ(45deg);
+	-ms-transform: translateY(6px) rotateZ(45deg);
+	-o-transform: translateY(6px) rotateZ(45deg);
+	transform: translateY(6px) rotateZ(45deg);
+}
+.btnViewClose .bottom {
+	-webkit-transform: translateY(-4px) rotateZ(-45deg);
+	-moz-transform: translateY(-4px) rotateZ(-45deg);
+	-ms-transform: translateY(-4px) rotateZ(-45deg);
+	-o-transform: translateY(-4px) rotateZ(-45deg);
+	transform: translateY(-4px) rotateZ(-45deg);
+}
+.btnViewClose .middle {
+	width: 0;
+}
+
+@media only screen and (min-width: 769px) {
+	.itemViewBox {
+		background: rgba(0,0,0,0.7);
+		overflow-y: hidden;
+	}
+	.itemViewInner {
+		position: absolute;
+		top: 20px;
+		left: 0;
+		right: 0;
+		width: 90%;
+		max-width: 860px;
+		height: calc(100vh - 40px);
+		margin: 0 auto;
+		overflow: hidden;
+		overflow-y: auto;
+		background: #fff;
+	}
+	.btnViewClose {
+		position: fixed;
+		top: 4%;
+		top: 20px;
+		right: 50%;
+		transform: translateX(50%);
+		margin-right: -405px;
+		background: rgba(0,0,0,0.7);
+	}
+	.itemViewClose,
+	.itemViewShadow {
+		display: none;
+	}
+}
+@media only screen and (min-width: 769px) and (max-width: 980px) {
+	.itemViewTop {
+		position: relative;
+		z-index: 1;
+	}
+	.btnViewClose {
+		right: 25px;
+		right: 40px;
+		transform: translateX(0);
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.btnConsultClose {
+		right: auto;
+		left: 9px;
+	}
+	.btnViewClose .con {
+		margin-top: -8px;
+	}
+	.btnViewClose .bar {
+		background: #fff;
+	}
+	.btnConsultClose .con .top {
+		width: 10px;
+		-webkit-transform: rotateZ(-45deg) translate(-9px, -6px);
+		-moz-transform: rotateZ(-45deg) translate(-9px, -6px);
+		-ms-transform: rotateZ(-45deg) translate(-9px, -6px);
+		-o-transform: rotateZ(-45deg) translate(-9px, -6px);
+		transform: rotateZ(-45deg) translate(-9px, -6px);
+	}
+	.btnConsultClose .con .middle {
+		width: 25px;
+		-webkit-transform: translateX(-1px);
+		-moz-transform: translateX(-1px);
+		-ms-transform: translateX(-1px);
+		-o-transform: translateX(-1px);
+		transform: translateX(-1px);
+		transform: translateX(-1px);
+	}
+	.btnConsultClose .con .bottom {
+		width: 10px;
+		-webkit-transform: rotateZ(45deg) translate(-9px, 6px);
+		-moz-transform: rotateZ(45deg) translate(-9px, 6px);
+		-ms-transform: rotateZ(45deg) translate(-9px, 6px);
+		-o-transform: rotateZ(45deg) translate(-9px, 6px);
+		transform: rotateZ(45deg) translate(-9px, 6px);
+	}
+	.itemViewTop {
+		position: fixed;
+		top: 30px;
+		right: 20px;
+		width: 40px;
+		height: 40px;
+		background: rgba(0,0,0,0.7);
+		z-index: 2;
+	}
+	.btnViewClose {
+		top: 4px;
+		right: auto;
+		left: 9px;
+		left: 0;
+		width: 40px;
+		height: 40px;
+	}
+
+	.itemViewBox {
+		background: rgba(0, 0, 0, 0.6);
+	}
+	.itemViewShadow {
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.itemViewInner {
+		background: #fff;
+		height: calc(100% - 85px);
+		width: calc(100% - 40px);
+		margin: 30px auto 0;
+	}
+	.showItem .itemViewInner {
+		-webkit-animation: slideItemInner .5s forwards 0.7s ease-in-out;
+		animation: slideItemInner .5s forwards 0.7s ease-in-out;
+	}
+	.itemViewClose {
+		display: block;
+		font-family: 'Noto Sans KR';
+		font-size: 15px;
+		font-weight: 400;
+		letter-spacing: -0.38px;
+		color: #fff;
+		margin: 6px auto 0;
+		background: transparent;
+		border: 0;
+		outline: 0;
+		opacity: 0;
+	}
+	.itemViewClose::before {
+		content: '';
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		background: url(/common/img/ico_close_w.png);
+		background-size: 12px auto;
+		background-repeat: no-repeat;
+		margin-right: 10px;
+	}
+	.showItem .itemViewClose {
+		-webkit-animation: slideItemClose .6s forwards 1s ease-in-out;
+		animation: slideItemClose .6s forwards 1s ease-in-out;
+	}
+}

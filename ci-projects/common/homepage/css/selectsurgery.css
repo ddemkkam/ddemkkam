@@ -1,0 +1,288 @@
+.select-surgery {
+	padding: 0 20px 90px;
+}
+.benefit-area {
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 24px;
+	padding: 0 24px 0 60px;
+	margin: 0 -20px;
+	background-color: var(--color-primary);
+	background-image: url(../assets/selectSurgery/ico_benefit_select.svg);
+	background-repeat: no-repeat;
+	background-size: 40px auto;
+	background-position: 16px 50%;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: -0.28px;
+	text-align: left;
+	color: var(--color-white);
+}
+.benefit-area button {
+	float: right;
+	height: 40;
+	font-size: 12px;
+	font-weight: 500;
+	padding: 0 10px;
+	margin-right: -10px;
+}
+.select-surgery > h3 {
+	position: relative;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: -0.36px;
+	line-height: 1.4;
+	margin: 20px auto 10px;
+}
+
+.select-surgery > h3 b {
+	color: var(--color-primary);
+}
+.select-surgery > h3 em {
+	font-weight: 500;
+	letter-spacing: -0.36px;
+}
+.select-surgery > h3 em::after {
+	content: '님';
+}
+.select-surgery > h3 .log-btn {
+	position: absolute;
+	right: 0;
+	top: 5px;
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	color: var(--light-gray);
+	height: 26px;
+	line-height: 24px;
+	padding: 0 12px;
+	border-radius: 4px;
+	border: solid 1px var(--border-gray);
+	background-color: var(--color-white);
+}
+
+.select-surgery > h4 {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: -0.28px;
+	margin-bottom: 25px;
+}
+
+/* 시술선택 */
+.category-wrap {
+	position: relative;
+	margin-top: 35px;
+}
+.category-wrap .depth1 {
+	padding-right: 40px;
+}
+.depth1 .item {
+	width: auto;
+	height: 38px;
+	padding: 12px 16px;
+	margin-right: 7px;
+	border-radius: 8px;
+	border: solid 1px #d0d6de;
+	background-color: var(--color-white);
+	font-size: 12px;
+	font-weight: 500;
+}
+.depth1 .item.active {
+	background-color: var(--color-black);
+	border-color: var(--color-black);
+	color: var(--color-white);
+}
+.category-wrap button {
+	position: absolute;
+	top: -1px;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+	border: solid 1px #d0d6de;
+	background-color: #fff;
+	background-image: url(../assets/selectSurgery/ico_plus.svg);
+	background-position: 50%;
+	background-repeat: no-repeat;
+	color: transparent;
+	font-size: 0;
+	z-index: 1;
+}
+
+.depth2-wrap {
+	margin: 10px -20px 0;
+	border-bottom: 1px solid #f0f2f5;
+}
+.depth2 .item {
+	width: auto;
+	height: 46px;
+	line-height: 46px;
+	margin: 0 12px;
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--light-gray);
+}
+.depth2 .item:first-child {
+	margin-left: 20px;
+}
+.depth2 .item.active {
+	font-weight: bold;
+	color: var(--color-black);
+	border-bottom: 2px solid var(--color-black);
+}
+
+.surgery-item-box {
+	position: relative;
+	padding: 25px 0 0;
+}
+.surgery-item  {
+	position: relative;
+	padding: 20px 20px 0;
+	margin-bottom: 12px;
+	overflow: hidden;
+	border-radius: 8px;
+	border: solid 1px var(--border-gray);
+	background-color: var(--color-white);
+}
+.surgery-item-box .detail {
+	margin: 0 -20px;
+	padding: 20px;
+	background-color: #f6f7f9;
+	overflow: hidden;
+}
+.surgery-item-box .surgery-item:not(.open) .detail {
+	display: none;
+}
+.surgery-item-box .detail .category {
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: -0.24px;
+	color: var(--light-gray);
+}
+.surgery-item-box .detail .desc {
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: #444b55;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var(--border-gray);
+}
+.surgery-item-box .detail .info {
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: -0.24px;
+	color: var(--light-gray);
+	margin-top: 24px;
+	margin-bottom: 18px;
+}
+.surgery-item-box .detail dl {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.surgery-item-box .detail dt {
+	float: left;
+	width: 72px;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: -0.24px;
+	color: #444b55;
+	padding-top: 2px;
+}
+.surgery-item-box .detail dd {
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: -0.28px;
+	color: #444b55;
+	margin-bottom: 10px;
+}
+.surgery-item-box .detail li {
+	float: left;
+	height: 30px;
+	padding: 8px 12px;
+	border-radius: 4px;
+	background-color: var(--color-light-green);
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	color: var(--color-primary);
+	margin-right: 7px;
+	margin-bottom: 7px;
+}
+.surgery-item-box .title {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: -0.32px;
+}
+.surgery-item-box .title em {
+	display: inline-block;
+	position: relative;
+	top: -4px;
+	width: 43px;
+	height: 20px;
+	line-height: 20px;
+	padding: 0 4px;
+	margin-left: 2px;
+	background-color: var(--color-light-green);
+	font-size: 10px;
+	font-weight: 500;
+	font-style: normal;
+	text-align: center;
+	color: var(--color-primary);
+}
+.surgery-item-box .headline {
+	width: calc(100% - 20px);
+	font-size: 12px;
+	letter-spacing: -0.24px;
+	color: var(--light-gray);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	margin: 10px 0 15px;
+}
+
+.surgery-item-box .select-box {
+	margin: 0 -20px;
+	padding: 12px 16px;
+	border-top: 1px dashed var(--border-gray);
+	text-align: right;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: -0.28px;
+}
+.surgery-item-box .select-box button {
+	/* width: 53px; */
+	height: 30px;
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: var(--light-gray);
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	color: var(--color-white);
+	margin-left: 8px;
+	padding: 0 16.4px;
+	cursor: pointer;
+}
+.surgery-item-box .more {
+	position: absolute;
+	top: 41px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	background-color: var(--color-white);
+	background-image: url(../assets/selectSurgery/ico_more.svg);
+	background-position: 50%;
+	background-repeat: no-repeat;
+	font-size: 0;
+	color: transparent;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.surgery-item-box .surgery-item.open .more {
+	transform: rotate(180deg);
+}
+

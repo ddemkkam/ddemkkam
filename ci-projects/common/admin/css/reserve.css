@@ -1,0 +1,1107 @@
+/* 반응형용 예약 및 달력 스타일 */
+@charset "utf-8";
+/* CSS Document */
+@import url("../../common/css/font/font.css");
+
+.noti {
+	display: none;
+}
+
+/* 이벤트 신청 Form */
+#consult_wrapper * {
+	font-family: 'Noto Sans KR','돋음', sans-serif;
+}
+#consult_wrapper {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0 auto;
+	background: rgba(0,0,0,0.8);
+}
+#consult_wrapper.on {
+	display: block;
+}
+#consult_wrapper .consult_inner {
+	background: #fff;
+	width: 500px;
+    height: 650px;
+	position: absolute;
+	top: 50%;
+	left: 0 !important;
+	right: 0;
+	margin: 0 auto;
+	padding: 48px 0 0 30px;
+	-webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+	box-sizing: border-box;
+}
+#consult_wrapper .consult_inner .form_wrapper {
+	height: calc(100% - 145px);
+	overflow: hidden;
+	overflow-y: auto;
+	margin-top: 15px;
+}
+#consult_wrapper h1 {
+	display: block;
+	font-size: 30px;
+	font-weight: 700;
+	color: #424248;
+	letter-spacing: -1px;
+	line-height: 1.0;
+}
+#consult_wrapper .consult_close {
+	display: block;
+	width: 32px;
+	position: absolute;
+	top: 48px;
+	right: 30px;
+}
+
+/* 진료구분 */
+#consult_wrapper .reserveRadioBox {
+    clear: both;
+    /* height: 110px; */
+    line-height: 110px;
+}
+#consult_wrapper .reserveRadioBox .tblStrField-error {
+    width: 100%;
+    border-bottom: 1px solid #b0b0b0;
+    height: 1px;
+}
+#consult_wrapper.mo .reserveRadioBox {
+    font-size: 36px;
+    /* height: 130px; */
+    line-height: 130px;
+}
+#consult_wrapper .reserveRadioBox .radioBoxInner {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    margin-left: 37px;
+}
+#consult_wrapper .reserveRadioBox span {
+    width: 130px;
+    font-weight: 600;
+    color: #000;
+    margin-right: 20px;
+    font-size: 25px;
+}
+#consult_wrapper .reserveRadioBox input[type=radio] {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    opacity: 0;
+}
+#consult_wrapper .reserveRadioBox label {
+    position: relative;
+    width: 120px;
+    outline: 0;
+    font-size: 36px;
+    font-weight: 500;
+    color: #535353;
+    padding-left: 50px;
+    margin-top: 5px !important;
+}
+#consult_wrapper .reserveRadioBox label:before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    background: #ededed;
+    border-radius: 50%;
+}
+#consult_wrapper .reserveRadioBox input[type=radio]:checked + label:before {
+    background: #dc0000;
+}
+
+#consult_wrapper .formGroup {
+	display: block;
+}
+#consult_wrapper .formGroup.selectBox {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+	position: relative;
+    width: inherit;
+    height: inherit;
+    overflow: inherit;
+}
+#consult_wrapper .formGroup.selectBox::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 130%;
+}
+#consult_wrapper .formGroup.selectBox label {
+	float: left;
+}
+#consult_wrapper .formGroup.selectBox select {
+	background: none;
+    width: auto;
+    border: 0;
+    margin-left: 7px;
+    height: 50px;
+    padding: 0;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 17px;
+    margin-bottom: -22px;
+}
+#consult_wrapper .formGroup.selectOpt {
+    font-size: 25px;
+    font-weight: 500;
+	color: #dc0000;
+    word-break: break-all;
+	line-height: 1.2;
+}
+#consult_wrapper .formGroup,
+#consult_wrapper .formGroup_radio {
+	margin-right: 43px
+}
+#consult_wrapper .formGroup .titles,
+#consult_wrapper .formGroup_radio span {
+	display: block !important;
+    font-size: 25px;
+    font-weight: 600;
+    color: #424248;
+    margin-top: 31px;
+    margin-bottom: 10px;
+}
+#consult_wrapper .formGroup_radio span {
+	margin-bottom: 10px;
+}
+#consult_wrapper .formGroup input[type='text'],
+#consult_wrapper .formGroup input[type='number'],
+#consult_wrapper .formGroup select {
+	width: 100%;
+	height: 126px;
+	font-size: 40px;
+	font-weight: 600;
+	color: #424248;
+	padding: 15px 0;
+    box-sizing: border-box;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5;
+	outline: 0;
+}
+#consult_wrapper .formGroup select {
+	font-weight: 400;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #fff url('/m/event/img/select_arrow.png') no-repeat 92% 50%;
+}
+#consult_wrapper .formGroup select::-ms-expand {
+	display: none;
+}
+#consult_wrapper .formGroup input[type='text']::-webkit-input-placeholder,
+#consult_wrapper .formGroup input[type='number']::-webkit-input-placeholder {
+	font-weight: 400;
+	color: #b4b4b4;
+	letter-spacing: -1px;
+}
+#consult_wrapper .formGroup input[type='text']::-moz-placeholder,
+#consult_wrapper .formGroup input[type='number']::-moz-placeholder {
+	font-weight: 400;
+	color: #b4b4b4;
+	letter-spacing: -1px;
+}
+#consult_wrapper .formGroup input[type='text']:-ms-input-placeholder,
+#consult_wrapper .formGroup input[type='number']:-ms-input-placeholder {
+	font-weight: 400;
+	color: #b4b4b4;
+	letter-spacing: -1px;
+}
+#consult_wrapper .formGroup input[type='text']:-moz-placeholder,
+#consult_wrapper .formGroup input[type='number']:-moz-placeholder {
+	font-weight: 400;
+	color: #b4b4b4;
+	letter-spacing: -1px;
+}
+
+#consult_wrapper .formGroup_radio {
+	position: relative;
+    overflow: hidden;
+}
+#consult_wrapper .formGroup_radio .radio_group {
+	position: relative;
+}
+#consult_wrapper .formGroup_radio label:not(#wr_14-error) {
+	float: left;
+	display: inline-block;
+	width: 281px;
+	width: 48.92%;
+	height: 90px;
+	line-height: 90px;
+	background-color:#f3f3f3;
+	font-size: 30px;
+	font-weight: 400;
+	color: #424248;
+	text-align: center;
+	border-radius: 50px;
+	margin-top: 18px;
+}
+
+#consult_wrapper .formGroup_radio .odd {
+	margin-right: 12px;
+}
+#consult_wrapper .formGroup_radio input[type=radio] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+#consult_wrapper .formGroup_radio input[type=radio]:checked + label:not(#wr_14-error) {
+	color: #fff;
+	background-color:#30d3bd;
+}
+#consult_wrapper .consult_inner form .mobileVer {
+	display: block;
+}
+#consult_wrapper .agree {
+	clear: both;
+	margin-top: 60px;
+	bottom: 24px;
+}
+#consult_wrapper .smspush {
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
+#consult_wrapper .agree label,
+#consult_wrapper .agree a,
+#consult_wrapper .smspush label {
+	font-size: 32px;
+	font-weight: 600;
+	color: #b4b4b4;
+}
+
+#consult_wrapper .checkbox {
+    position: relative;
+}
+#consult_wrapper .checkbox label {
+    position: relative;
+    margin-top: 7px;
+    padding-left: 47px;
+    outline: 0;
+}
+#consult_wrapper .checkbox label:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+	width: 32px;
+	height: 32px;
+    border: 2px solid #424248;
+    border-radius: 5px;
+}
+#consult_wrapper .checkbox input[type=checkbox] {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    opacity: 0;
+}
+#consult_wrapper .checkbox input[type=checkbox]:checked + label:before {
+    background: #dc0000;
+    border-color: #dc0000;
+}
+#consult_wrapper .checkbox input[type=checkbox]:checked + label:after {
+    content: '';
+    position: absolute;
+	top: 8px;
+    left: 6px;
+    width: 20px;
+    height: 9px;
+    border-left: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    -webkit-ransform: rotate(-48deg);
+    -moz-transform: rotate(-48deg);
+    transform: rotate(-48deg);
+    border-radius: 2px;
+}
+
+#consult_wrapper .agree a {
+    position: relative;
+    top: -1px;
+	text-decoration: none;
+}
+#consult_wrapper .agree input,
+#consult_wrapper .smspush input {
+	width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+#consult_wrapper .submit_btn {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0;
+    right: 0;
+	top: auto;
+    bottom: 0;
+	background: #dc0000;
+	border: 0;
+	border-radius: 0;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 500;
+	letter-spacing: -2px;
+	outline: 0;
+	line-height: 1.2;
+}
+
+#consult_wrapper label.error {
+	position: relative;
+    top: 10px;
+	color: #dc0000;
+    font-size: 34px;
+    font-weight: 400;
+	letter-spacing: -1px;
+}
+#consult_wrapper #username-error {
+	padding-bottom: 20px;
+	word-break: keep-all;
+}
+
+.reserveRadioBox.tblIntField_b {
+    line-height: 1.3 !important;
+	padding: 14px 0;
+}
+#consult_wrapper .reserveRadioBox .tblIntField-error {
+    width: calc(100% - 43px);
+    border-bottom: 1px solid #b0b0b0;
+    height: 1px;
+	margin-top: 40px;
+}
+#consult_wrapper .reserveRadioBox #tblIntField-error.error:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-radius: 50%;
+}
+#tblIntField-error.error,
+#tblStrField-error.error {
+    color: #dc0000;
+	width: 100%;
+    padding-left: 0;
+}
+
+/* 예약달력 */
+.reserveDateContainer {
+    margin-top: 30px;
+}
+#eventCalendar {
+    padding-top: 40px;
+}
+#eventCalendar .ui-widget.ui-widget-content {
+    border: 0;
+    width: 95%;
+    padding: 0;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-header {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-bottom: 30px;
+	text-align: center;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-title {
+    margin: 0;
+    font-size: 48px;
+    color: #0d0d0d;
+    line-height: 1.3em;
+}
+#eventCalendar .ui-widget-header {
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+#eventCalendar .ui-widget-header .ui-icon {
+    width: 16px;
+    height: 30px;
+    background-image: url(http://www.ppeum1.com/m/images/reserve/icon_direction.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+	background-size: 12px auto;
+}
+#eventCalendar .ui-widget-header .ui-icon.ui-icon-circle-triangle-e {
+    -webkit-ransform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+#eventCalendar .ui-corner-all:hover {
+    border: 0;
+    background: transparent;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-prev {
+    left: 60px;
+    top: 17px;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-next {
+    right: 60px;
+    top: 17px;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-prev span,
+#eventCalendar .ui-datepicker .ui-datepicker-next span {
+    margin-top: -14px;
+}
+#eventCalendar .ui-datepicker-month {
+    position: relative;
+    margin-left: 2px;
+    padding-left: 2px;
+}
+#eventCalendar .ui-datepicker-month::before {
+    content: '.';
+    position: absolute;
+    left: -5px;
+    bottom: 3px;
+}
+#eventCalendar .ui-datepicker table {
+    width: 100%;
+    font-size: 26px;
+}
+#eventCalendar .ui-datepicker th {
+    padding: .7em .3em;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    border: 0;
+    color: #535353;
+}
+#eventCalendar .ui-state-disabled,
+#eventCalendar .ui-widget-content .ui-state-disabled,
+#eventCalendar .ui-widget-header .ui-state-disabled {
+    opacity: 1;
+    filter: Alpha(Opacity=100);
+    color: #c9c9c9;
+}
+#eventCalendar .ui-state-default,
+#eventCalendar .ui-widget-content .ui-state-default,
+#eventCalendar .ui-widget-header .ui-state-default,
+#eventCalendar .ui-button,
+html #eventCalendar .ui-button.ui-state-disabled:hover,
+html #eventCalendar .ui-button.ui-state-disabled:active {
+    border: 0;
+    background: transparent;
+    font-weight: normal;
+    color: #0d0d0d;
+}
+#eventCalendar .ui-state-active,
+#eventCalendar .ui-widget-content .ui-state-active,
+#eventCalendar .ui-widget-header .ui-state-active,
+#eventCalendar a.ui-button:active,
+#eventCalendar .ui-button:active,
+#eventCalendar .ui-button.ui-state-active:hover {
+    border-radius: 50%;
+    background: #dc0000;
+    color: #fff;
+}
+#eventCalendar .ui-datepicker td span,
+#eventCalendar .ui-datepicker td a {
+    padding: 0;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin: 0 auto;
+}
+#eventCalendar .ui-state-disabled span {
+    color: #c9c9c9 !important;
+}
+#eventCalendar .ui-datepicker td a {
+    position: relative;
+    text-decoration: none !important;
+}
+#eventCalendar .ui-datepicker td a.ui-state-highlight {}
+#eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default {
+    position: relative;
+}
+#eventCalendar .ui-datepicker td a.ui-state-highlight::after,
+#eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default::after {
+    content: 'TODAY';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #535353;
+    letter-spacing: -1px;
+    line-height: 1.3;
+}
+#eventCalendar .ui-datepicker td a.ui-state-highlight.ui-state-active::after {
+    color: #fff;
+    color: transparent;
+}
+#consult_wrapper .formGroup input[type='text'],
+#consult_wrapper .formGroup input[type='number'] {
+	font-size: 25px;
+    height: 60px;
+}
+#consult_wrapper .agree label,
+#consult_wrapper .agree a,
+#consult_wrapper .smspush label {
+    font-size: 22px;
+    font-weight: 500;
+}
+#consult_wrapper label.error,
+#tblStrField-error {
+	width: 100%;
+	font-size: 18px !important;
+    font-weight: 400 !important;
+	padding-left: 0;
+	height: auto;
+	line-height: 24px;
+}
+#consult_wrapper #reserveDate-error {
+    height: 35px;
+    margin-top: -9px !important;
+    margin-bottom: 12px;
+}
+#consult_wrapper #reserveTime-error {
+	display: block;
+    height: 35px;
+    margin-top: 0 !important;
+}
+#consult_wrapper #tblStrField3-error.error {
+	display: block;
+}
+#consult_wrapper .smspush {
+    margin-top: 2px;
+}
+#consult_wrapper .empty {
+    height: 30px;
+}
+#tblStrField-error.error {
+    width: 100% !important;
+    padding-left: 0 !important;
+    margin-bottom: 19px;
+    position: relative !important;
+    top: 0px !important;
+    display: block;
+    color: #dc0000 !important;
+}
+#consult_wrapper .reserveRadioBox #tblStrField-error.error:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-radius: 50%;
+}
+#consult_wrapper .reserveTimeWrapper {
+    margin-right: 30px;
+    margin-top: 10px;
+}
+#consult_wrapper .reserveTimeWrapper.reserveAccordion .sectionTitle {
+    line-height: 70px;
+}
+#consult_wrapper .reserveAccordion.reserveDateWrapper .sectionTitle span {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+}
+#consult_wrapper .reserveAccordion .sectionTitle span em {
+    top: -3px;
+    font-size: 28px;
+}
+#consult_wrapper .reserveAccordion .sectionTitle span::before {
+    top: 24px;
+}
+#consult_wrapper .reserveAccordion .selectList.timeList .radioBox {
+    height: 80px;
+    line-height: 80px;
+}
+#consult_wrapper .reserveAccordion .selectList.timeList .radioBox label {
+    height: 60px;
+    line-height: 60px;
+    font-size: 32px;
+}
+#consult_wrapper #eventCalendar .ui-datepicker .ui-datepicker-title {
+    font-size: 30px;
+}
+#consult_wrapper #eventCalendar .ui-datepicker .ui-datepicker-prev span,
+#consult_wrapper #eventCalendar .ui-datepicker .ui-datepicker-next span {
+    margin-top: -24px;
+}
+#consult_wrapper #eventCalendar .ui-datepicker th {
+    font-size: 20px;
+}
+#consult_wrapper #eventCalendar .ui-datepicker td span,
+#consult_wrapper #eventCalendar .ui-datepicker td a {
+	display: block;
+	width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 26px;
+}
+
+/* 진료구분 */
+#consult_wrapper .reserveRadioBox {
+    clear: both;
+    line-height: 110px;
+}
+#consult_wrapper .reserveRadioBox .tblStrField-error {
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5;
+    height: 1px;
+}
+#consult_wrapper .reserveRadioBox .radioBoxInner {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    margin-left: 37px;
+}
+#consult_wrapper .reserveRadioBox span {
+    width: 130px;
+    font-weight: 600;
+    color: #424248;
+    margin-right: 20px;
+}
+#consult_wrapper .reserveRadioBox input[type=radio] {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    opacity: 0;
+}
+#consult_wrapper .reserveRadioBox label {
+    position: relative;
+    width: 120px;
+    outline: 0;
+    font-size: 25px;
+    font-weight: 500;
+    color: #535353;
+    padding-left: 50px;
+    margin-top: 5px !important;
+}
+#consult_wrapper .reserveRadioBox label:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    background: #ededed;
+    border-radius: 50%;
+}
+#consult_wrapper .reserveRadioBox input[type=radio]:checked + label:before {
+    background: #dc0000;
+}
+/* 시간 */
+#consult_wrapper .reserveAccordion .reserveTimeGroup {
+    display: none;
+    position: relative;
+    line-height: 110px;
+}
+#consult_wrapper .reserveAccordion .reserveTimeGroup .reserveTime-error {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #b0b0b0;
+    height: 1px;
+}
+#consult_wrapper .reserveTimeWrapper.reserveAccordion .sectionTitle span::before {
+    background-image: url(http://www.ppeum1.com/m/images/reserve/icon_arrow.png);
+    background-size: 40px auto;
+}
+#consult_wrapper .reserveAccordion .sectionTitle span em {
+    position: relative;
+    top: 0;
+    display: inline-block;
+	font-size: 26px;
+    font-weight: 500;
+    color: #b4b4b4;
+    margin-left: 15px;
+}
+#consult_wrapper .reserveAccordion.reserveJijumWrapper .sectionTitle span em {
+    font-size: 24px;
+    color: #dc0000;
+    margin-left: 33px;
+}
+#consult_wrapper .reserveAccordion .sectionTitle span em.on {
+    color: #424248;
+}
+#consult_wrapper .reserveAccordion .selectJijum {
+    display: none;
+    font-size: 30px;
+    font-weight: 500;
+    color: #0d0d0d;
+    letter-spacing: -2px;
+    line-height: 120px;
+    padding-left: 89px;
+    border-bottom: 1px solid #e3e3e3;
+}
+#consult_wrapper .reserveAccordion .selectJijum.on {
+    display: block;
+}
+#consult_wrapper .reserveAccordion .selectList {
+    height: 0;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+}
+#consult_wrapper .reserveAccordion .selectList.on {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 20px 0 40px;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    padding: 10px 0;
+    background: #fff;
+    z-index: 1;
+}
+#consult_wrapper .reserveJijumWrapper.reserveAccordion .selectList {
+    position: absolute;
+    top: 98px;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-top: 0;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox {
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 93px;
+}
+#consult_wrapper .reserveTimeWrapper.reserveAccordion .selectList .radioBox {
+	height: 60px;
+    line-height: 60px;
+    margin: 0 30px;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox label {
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    color: #0d0d0d;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+#consult_wrapper .reserveAccordion .selectList.timeList .radioBox label {
+	height: 60px;
+	line-height: 60px;
+	font-size: 26px;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox input[type=radio] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox:hover label,
+#consult_wrapper .reserveAccordion .selectList .radioBox input[type=radio]:checked + label {
+    color: #dc0000;
+}
+#consult_wrapper .reservationInfo {
+    padding: 60px 52px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #ededed;
+}
+#consult_wrapper .reservationInfo .reserveFormGroup {
+    height: 122px;
+    line-height: 122px;
+    background: #fff;
+    margin: 0 auto 14px;
+    padding: 0 26px;
+    overflow: hidden;
+}
+#reserveDate-error {
+    width: 100% !important;
+    height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 12px;
+}
+#reserveTime-error {
+    width: 100% !important;
+    height: 50px;
+    margin-top: 0 !important;
+}
+
+@media screen and (max-width: 640px) {
+	#consult_wrapper .consult_inner {
+		width: 90%;
+		height: 80%;
+		padding-top: 42px;
+		padding-left: 30px;
+	}
+	#consult_wrapper .consult_close {
+		width: 30px;
+		top: 37px;
+	    right: 30px;
+	}
+	#consult_wrapper h1 {
+	    font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	#consult_wrapper #eventCalendar .ui-datepicker td span,
+	#consult_wrapper #eventCalendar .ui-datepicker td a {
+	    width: 51px;
+	    height: 51px;
+	    line-height: 51px;
+	    font-size: 20px;
+	    padding: 0;
+	}
+	#eventCalendar .ui-datepicker td a.ui-state-highlight::after,
+	#eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default::after {
+	    font-size: 11px;
+	    bottom: 0;
+	}
+	#consult_wrapper #eventCalendar .ui-datepicker .ui-datepicker-title {
+	    font-size: 25px;
+	}
+	#eventCalendar .ui-widget-header .ui-icon {
+	    background-size: 9px auto;
+	}
+	#eventCalendar .ui-datepicker .ui-datepicker-prev,
+	#eventCalendar .ui-datepicker .ui-datepicker-next {
+	    top: 13px;
+	}
+	#consult_wrapper .formGroup .titles,
+	#consult_wrapper .formGroup.selectOpt,
+	#consult_wrapper .formGroup.selectBox select,
+	#consult_wrapper .formGroup_radio span,
+	#consult_wrapper .reserveAccordion.reserveDateWrapper .sectionTitle span,
+	#consult_wrapper .formGroup input[type='text'],
+	#consult_wrapper .formGroup input[type='number'],
+	#consult_wrapper .reserveAccordion .sectionTitle span em,
+	#consult_wrapper .reserveAccordion .selectList.timeList .radioBox label,
+	#consult_wrapper .reserveRadioBox span {
+	    font-size: 22px;
+	}
+	#consult_wrapper .reserveRadioBox {
+		line-height: 55px;
+		padding-bottom: 10px;
+	}
+	#consult_wrapper .reserveRadioBox .radioBoxInner {
+	    margin-left: 0;
+		margin-right: 35px;
+	}
+	#consult_wrapper .reserveRadioBox label {
+		font-size: 22px;
+		padding-left: 40px;
+	}
+	#consult_wrapper .reserveRadioBox label:before {
+		width: 30px;
+		height: 30px;
+	}
+	#consult_wrapper .reserveRadioBox span {
+		display: block;
+	}
+	#consult_wrapper .reserveTimeWrapper.reserveAccordion .selectList .radioBox,
+	#consult_wrapper .reserveAccordion .selectList.timeList .radioBox label {
+	    height: 50px;
+	    line-height: 50px;
+	}
+	#consult_wrapper .reserveTimeWrapper.reserveAccordion .selectList .radioBox {
+	    margin: 0 20px;
+	}
+	#consult_wrapper .formGroup.selectBox select {
+		margin-top: 15px;
+	}
+	#consult_wrapper label.error {
+	    font-size: 16px;
+	    line-height: 20px;
+	}
+	#consult_wrapper .checkbox label:before {
+	    width: 26px;
+	    height: 26px;
+	}
+	#consult_wrapper .checkbox input[type=checkbox]:checked + label:after {
+	    top: 6px;
+	    left: 4px;
+	    width: 18px;
+	    height: 8px;
+	    border-left: 3px solid #fff;
+	    border-bottom: 3px solid #fff;
+	}
+	#consult_wrapper .agree label, #consult_wrapper .agree a,
+	#consult_wrapper .smspush label {
+	    font-size: 18px;
+	}
+	#consult_wrapper .checkbox label {
+	    padding-left: 40px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	#consult_wrapper .consult_inner {
+	    padding-top: 25px;
+	    padding-left: 20px;
+	}
+	#consult_wrapper .consult_close {
+	    width: 23px;
+	    top: 22px;
+	    right: 20px;
+	}
+	#consult_wrapper .consult_inner .form_wrapper {
+		margin-top: 25px;
+	    height: calc(100% - 115px);
+	}
+	#consult_wrapper h1 {
+	    font-size: 20px;
+	}
+	#consult_wrapper .reserveRadioBox {
+		line-height: 48px;
+	}
+	#consult_wrapper .reserveRadioBox .radioBoxInner {
+		margin-right: 29px;
+	}
+	#consult_wrapper .formGroup .titles,
+	#consult_wrapper .formGroup_radio span,
+	#consult_wrapper .reserveRadioBox span {
+	    font-size: 18px;
+	    margin-top: 20px;
+	}
+	#consult_wrapper .reserveRadioBox label {
+		font-size: 18px;
+		padding-left: 35px;
+	}
+	#consult_wrapper .reserveRadioBox label:before {
+		width: 25px;
+		height: 25px;
+	}
+	#consult_wrapper .reserveAccordion.reserveDateWrapper .sectionTitle span {
+	    font-size: 18px;
+	}
+	#consult_wrapper .formGroup.selectBox select {
+	    margin-top: 3px;
+		margin-left: 5px;
+	    font-size: 18px;
+	}
+	#consult_wrapper .formGroup,
+	#consult_wrapper .formGroup_radio {
+	    margin-right: 20px;
+	}
+	#eventCalendar {
+	    padding-top: 20px;
+	}
+	.reserveDateContainer {
+	    margin-top: 15px;
+	}
+	#eventCalendar .ui-datepicker-month::before {
+	    left: -3px;
+	    bottom: 2px;
+	}
+	#consult_wrapper #eventCalendar .ui-datepicker .ui-datepicker-title {
+	    font-size: 20px;
+	}
+	#eventCalendar .ui-datepicker .ui-datepicker-prev,
+	#eventCalendar .ui-datepicker .ui-datepicker-next {
+	    top: 9px;
+	}
+	#eventCalendar .ui-widget-header .ui-icon {
+	    background-size: 8px auto;
+	}
+	#eventCalendar .ui-datepicker .ui-datepicker-header {
+	    margin-bottom: 13px;
+	}
+	#consult_wrapper #eventCalendar .ui-datepicker th {
+	    font-size: 15px;
+	}
+	#consult_wrapper #eventCalendar .ui-datepicker td span,
+	#consult_wrapper #eventCalendar .ui-datepicker td a {
+		width: 38px;
+	    height: 38px;
+	    line-height: 38px;
+	    font-size: 15px;
+	}
+	#eventCalendar .ui-datepicker td a.ui-state-highlight::after,
+	#eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default::after {
+	    font-size: 10px;
+	}
+
+	#consult_wrapper .reserveTimeWrapper {
+	    margin-right: 20px;
+	    margin-top: 10px;
+	}
+	#consult_wrapper .reserveTimeWrapper.reserveAccordion .sectionTitle {
+	    line-height: 60px;
+	}
+	#consult_wrapper .reserveAccordion .sectionTitle span em {
+		font-size: 18px;
+	    margin-left: 11px;
+	}
+	#consult_wrapper .reserveTimeWrapper.reserveAccordion .selectList .radioBox {
+	    height: 50px;
+	    line-height: 50px;
+	    margin: 0 20px;
+	}
+	#consult_wrapper .reserveAccordion .selectList.timeList .radioBox label {
+	    font-size: 18px;
+	}
+	#consult_wrapper .formGroup input[type='text'],
+	#consult_wrapper .formGroup input[type='number'] {
+	    font-size: 18px;
+	    height: 60px;
+	}
+	#consult_wrapper .agree {
+	    margin-top: 60px;
+	}
+	#consult_wrapper .smspush {
+	    margin-top: -4px;
+	}
+	#consult_wrapper .agree label,
+	#consult_wrapper .agree a,
+	#consult_wrapper .smspush label {
+	    font-size: 16px;
+	}
+	#consult_wrapper .checkbox label {
+	    padding-left: 33px;
+	}
+	#consult_wrapper .checkbox label:before {
+	    top: 0;
+	    width: 20px;
+	    height: 20px;
+	    border-width: 2px;
+		border-radius: 3px;
+	}
+	#consult_wrapper .checkbox input[type=checkbox]:checked + label:after {
+		top: 6px;
+	    left: 3px;
+	    width: 14px;
+	    height: 6px;
+	    border-left-width: 3px;
+	    border-bottom-width: 3px;
+	}
+	#consult_wrapper label.error,
+	#tblStrField-error {
+		top: 3px;
+	    font-size: 15px !important;
+	    line-height: 25px;
+	}
+	#consult_wrapper .empty {
+	    height: 30px;
+	}
+	#consult_wrapper .submit_btn {
+	    height: 70px;
+	    font-size: 24px;
+	}
+}

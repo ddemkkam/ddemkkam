@@ -1,0 +1,851 @@
+@charset "utf-8";
+/* CSS Document */
+/*@import url("../../css/font/font.css");*/
+
+/* 진료구분 */
+#consult_wrapper .reserveRadioBox {
+    clear: both;
+    /* height: 110px; */
+    line-height: 110px;
+}
+#consult_wrapper .reserveRadioBox .tblStrField-error {
+    width: 100%;
+    border-bottom: 1px solid #b0b0b0;
+    height: 1px;
+}
+#consult_wrapper.mo .reserveRadioBox {
+    font-size: 36px;
+    /* height: 130px; */
+    line-height: 130px;
+}
+#consult_wrapper .reserveRadioBox .radioBoxInner {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    margin-left: 37px;
+}
+#consult_wrapper .reserveRadioBox span {
+    width: 130px;
+    font-weight: 600;
+    color: #000;
+    margin-right: 20px;
+}
+#consult_wrapper .reserveRadioBox input[type=radio] {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    opacity: 0;
+}
+#consult_wrapper .reserveRadioBox label {
+    position: relative;
+    width: 120px;
+    outline: 0;
+    font-size: 36px;
+    font-weight: 500;
+    color: #535353;
+    padding-left: 50px;
+    margin-top: 5px !important;
+}
+#consult_wrapper .reserveRadioBox label:before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    background: #ededed;
+    border-radius: 50%;
+}
+#consult_wrapper .reserveRadioBox input[type=radio]:checked + label:before {
+    background: #dc0000;
+}
+/* 시간 */
+#consult_wrapper .reserveAccordion .reserveTimeGroup {
+    display: none;
+    position: relative;
+    /* height: 110px; */
+    line-height: 110px;
+    /*border-bottom: 1px solid #e5e5e5;*/
+}
+#consult_wrapper.mo .reserveAccordion .reserveTimeGroup {
+	height: 150px;
+	line-height: 130px;
+}
+#consult_wrapper .reserveAccordion .reserveTimeGroup .reserveTime-error {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #b0b0b0;
+    height: 1px;
+}
+#consult_wrapper .reserveTimeWrapper.reserveAccordion .sectionTitle span::before {
+    background-image: url(http://www.ppeum1.com/m/images/reserve/icon_arrow.png);
+    background-size: 40px auto;
+}
+#consult_wrapper .reserveAccordion .sectionTitle span em {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 500;
+    color: #b4b4b4;
+    margin-left: 32px;
+}
+#consult_wrapper .reserveAccordion.reserveJijumWrapper .sectionTitle span em {
+    font-size: 24px;
+    color: #dc0000;
+    margin-left: 33px;
+}
+#consult_wrapper .reserveAccordion .sectionTitle span em.on {
+    color: #424248;
+}
+#consult_wrapper .reserveAccordion .selectJijum {
+    display: none;
+    font-size: 30px;
+    font-weight: 500;
+    color: #0d0d0d;
+    letter-spacing: -2px;
+    line-height: 120px;
+    padding-left: 89px;
+    border-bottom: 1px solid #e3e3e3;
+}
+#consult_wrapper .reserveAccordion .selectJijum.on {
+    display: block;
+}
+#consult_wrapper .reserveAccordion .selectList {
+    height: 0;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+}
+#consult_wrapper .reserveAccordion .selectList.on {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 20px 0 40px;
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    padding: 10px 0;
+    background: #fff;
+    z-index: 1;
+}
+#consult_wrapper .reserveJijumWrapper.reserveAccordion .selectList {
+    position: absolute;
+    top: 98px;
+    width: 100%;
+    z-index: 1;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-top: 0;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox {
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 93px;
+}
+#consult_wrapper .reserveTimeWrapper.reserveAccordion .selectList .radioBox {
+    height: 100px;
+    line-height: 100px;
+    margin: 0 40px;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox label {
+    display: block;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    color: #0d0d0d;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
+#consult_wrapper .reserveAccordion .selectList.timeList .radioBox label {
+    height: 70px;
+    line-height: 70px;
+    font-size: 36px;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox input[type=radio] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+#consult_wrapper .reserveAccordion .selectList .radioBox:hover label,
+#consult_wrapper .reserveAccordion .selectList .radioBox input[type=radio]:checked + label {
+    color: #dc0000;
+}
+#consult_wrapper .reservationInfo {
+    padding: 60px 52px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #ededed;
+}
+#consult_wrapper .reservationInfo .reserveFormGroup {
+    height: 122px;
+    line-height: 122px;
+    background: #fff;
+    margin: 0 auto 14px;
+    padding: 0 26px;
+    overflow: hidden;
+}
+#reserveDate-error {
+    width: 100% !important;
+    height: 50px;
+    margin-top: 0 !important;
+    margin-bottom: 12px;
+}
+#reserveTime-error {
+    width: 100% !important;
+    height: 50px;
+    margin-top: 0 !important;
+}
+.mo #reserveTime-error.error {
+    display: block;
+    line-height: 1.3;
+}
+/* 예약달력 */
+.reserveDateContainer {
+    margin-top: 50px;
+}
+#eventCalendar {
+    padding-top: 40px;
+}
+#eventCalendar .ui-widget.ui-widget-content {
+    border: 0;
+    width: 95%;
+    padding: 0;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-header {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-bottom: 30px;
+	text-align: center;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-title {
+    margin: 0;
+    font-size: 48px;
+    color: #0d0d0d;
+    line-height: 1.3em;
+}
+#eventCalendar .ui-widget-header {
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+#eventCalendar .ui-widget-header .ui-icon {
+    width: 16px;
+    height: 30px;
+    background-image: url(http://www.ppeum1.com/m/images/reserve/icon_direction.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+#eventCalendar .ui-widget-header .ui-icon.ui-icon-circle-triangle-e {
+    -webkit-ransform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+#eventCalendar .ui-corner-all:hover {
+    border: 0;
+    background: transparent;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-prev {
+    left: 160px;
+    top: 20px;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-next {
+    right: 160px;
+    top: 20px;
+}
+#eventCalendar .ui-datepicker .ui-datepicker-prev span,
+#eventCalendar .ui-datepicker .ui-datepicker-next span {
+    margin-top: -14px;
+}
+#eventCalendar .ui-datepicker-month {
+    position: relative;
+    margin-left: 2px;
+    padding-left: 2px;
+}
+#eventCalendar .ui-datepicker-month::before {
+    content: '.';
+    position: absolute;
+    left: -10px;
+    bottom: 3px;
+}
+#eventCalendar .ui-datepicker table {
+    width: 100%;
+    font-size: 26px;
+}
+#eventCalendar .ui-datepicker th {
+    padding: .7em .3em;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    border: 0;
+    color: #535353;
+}
+#eventCalendar .ui-state-disabled,
+#eventCalendar .ui-widget-content .ui-state-disabled,
+#eventCalendar .ui-widget-header .ui-state-disabled {
+    opacity: 1;
+    filter: Alpha(Opacity=100);
+    color: #c9c9c9;
+}
+#eventCalendar .ui-state-default,
+#eventCalendar .ui-widget-content .ui-state-default,
+#eventCalendar .ui-widget-header .ui-state-default,
+#eventCalendar .ui-button,
+html #eventCalendar .ui-button.ui-state-disabled:hover,
+html #eventCalendar .ui-button.ui-state-disabled:active {
+    border: 0;
+    background: transparent;
+    font-weight: normal;
+    color: #0d0d0d;
+}
+#eventCalendar .ui-state-active,
+#eventCalendar .ui-widget-content .ui-state-active,
+#eventCalendar .ui-widget-header .ui-state-active,
+#eventCalendar a.ui-button:active,
+#eventCalendar .ui-button:active,
+#eventCalendar .ui-button.ui-state-active:hover {
+    border-radius: 50%;
+    background: #dc0000;
+    color: #fff;
+}
+#eventCalendar .ui-datepicker td span,
+#eventCalendar .ui-datepicker td a {
+    padding: 0;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin: 0 auto;
+}
+#eventCalendar .ui-state-disabled span {
+    color: #c9c9c9 !important;
+}
+#eventCalendar .ui-datepicker td a {
+    position: relative;
+    text-decoration: none !important;
+}
+#eventCalendar .ui-datepicker td a.ui-state-highlight {}
+#eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default {
+    position: relative;
+}
+#eventCalendar .ui-datepicker td a.ui-state-highlight::after,
+#eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default::after {
+    content: 'TODAY';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #535353;
+    letter-spacing: -1px;
+    line-height: 1.3;
+}
+#eventCalendar .ui-datepicker td a.ui-state-highlight.ui-state-active::after {
+    color: #fff;
+    color: transparent;
+}
+#consult_wrapper.pc .consult_inner .form_wrapper {
+    margin-top: 9px;
+}
+#consult_wrapper.pc .consult_inner form {
+    margin-top: 40px;
+}
+#consult_wrapper.pc .consult_inner {
+    width: 655px;
+    height: 852px;
+    padding: 68px 0 0 43px;
+}
+#consult_wrapper.pc h1 {
+    font-size: 40px;
+}
+#consult_wrapper.pc .formGroup .titles,
+#consult_wrapper.pc .formGroup_radio span,
+#consult_wrapper.pc .reserveRadioBox span {
+    font-size: 34px;
+    color: #000;
+}
+#consult_wrapper.pc .formGroup input[type='text'],
+#consult_wrapper.pc .formGroup input[type='number'],
+#consult_wrapper.pc .formGroup select {
+    font-size: 30px !important;
+    height: 90px !important;
+}
+#consult_wrapper.pc .agree label,
+#consult_wrapper.pc .agree a,
+#consult_wrapper.pc .smspush label {
+    font-size: 22px;
+    font-weight: 500;
+}
+#consult_wrapper.pc .checkbox label {
+    padding-left: 55px;
+}
+#consult_wrapper.pc .checkbox label:before {
+    top: -3px;
+    width: 36px;
+    height: 36px;
+}
+#consult_wrapper.pc .checkbox input[type=checkbox]:checked + label:after {
+    top: 6px;
+    left: 7px;
+    width: 23px;
+    height: 12px;
+    border-left: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+#consult_wrapper.pc label.error {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 400;
+    padding-left: 0;
+    height: auto;
+    line-height: 40px;
+}
+#consult_wrapper.pc #reserveDate-error {
+    height: 35px;
+    margin-top: -9px !important;
+    margin-bottom: 12px;
+}
+#consult_wrapper.pc #reserveTime-error {
+	display: block;
+    height: 35px;
+    margin-top: 0 !important;
+}
+#consult_wrapper.pc #tblStrField3-error.error {
+	display: block;
+}
+#consult_wrapper.pc .smspush {
+    margin-top: 10px;
+}
+#consult_wrapper.pc .empty {
+    height: 50px;
+}
+#consult_wrapper.pc .submit_btn {
+    height: 130px !important;
+    left: 0 !important;
+    font-size: 46px !important;
+    font-weight: 500 !important;
+    letter-spacing: -2px !important;
+}
+#tblStrField-error.error {
+    width: 100% !important;
+    padding-left: 0 !important;
+    margin-bottom: 19px;
+    position: relative !important;
+    top: 0px !important;
+    display: block;
+    color: #dc0000 !important;
+}
+.mo #tblStrField-error.error {
+    line-height: 1.3;
+}
+#consult_wrapper .reserveRadioBox #tblStrField-error.error:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-radius: 50%;
+}
+#consult_wrapper.mo .consult_inner {
+    width: 90%;
+    height: 90%;
+    max-height: 1300px;
+}
+#consult_wrapper.mo.extend .consult_inner {
+    max-height: none;
+}
+#consult_wrapper .reserveAccordion.reserveDateWrapper .sectionTitle span {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 600;
+    color: #000;
+}
+#consult_wrapper .reserveTimeWrapper {
+    margin-right: 43px;
+}
+#consult_wrapper.pc .reserveTimeWrapper {
+    margin-top: 10px;
+}
+#consult_wrapper.pc .reserveTimeWrapper.reserveAccordion .sectionTitle {
+    line-height: 100px;
+}
+#consult_wrapper.pc .reserveAccordion .sectionTitle span em {
+    top: -3px;
+    font-size: 28px;
+}
+#consult_wrapper.pc .reserveAccordion .sectionTitle span::before {
+    top: 24px;
+}
+#consult_wrapper.pc .reserveAccordion .selectList.timeList .radioBox {
+    height: 80px;
+    line-height: 80px;
+}
+#consult_wrapper.pc .reserveAccordion .selectList.timeList .radioBox label {
+    height: 60px;
+    line-height: 60px;
+    font-size: 32px;
+}
+#consult_wrapper.pc #eventCalendar .ui-datepicker .ui-datepicker-title {
+    font-size: 36px;
+}
+#consult_wrapper.pc #eventCalendar .ui-datepicker .ui-datepicker-prev span,
+#consult_wrapper.pc #eventCalendar .ui-datepicker .ui-datepicker-next span {
+    margin-top: -24px;
+}
+#consult_wrapper.pc #eventCalendar .ui-datepicker th {
+    font-size: 20px;
+}
+#consult_wrapper.pc #eventCalendar .ui-datepicker td span,
+#consult_wrapper.pc #eventCalendar .ui-datepicker td a {
+	display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 30px;
+}
+
+.mo #eventCalendar .ui-datepicker th {
+    font-size: 36px;
+}
+.mo .ui-datepicker td {
+    height: 100px;
+}
+.mo #eventCalendar .ui-datepicker td a.ui-state-highlight::after,
+.mo #eventCalendar .ui-datepicker td.ui-datepicker-today .ui-state-default::after {
+    bottom: 0;
+    font-size: 18px;
+}
+#consult_wrapper.mo .formGroup.selectOpt {
+	font-size: 40px;
+}
+#consult_wrapper.mo .reserveAccordion.reserveDateWrapper .sectionTitle span,
+#consult_wrapper.mo .formGroup .titles,
+#consult_wrapper.mo .formGroup_radio span {
+    font-size: 40px;
+}
+#consult_wrapper.mo .agree label,
+#consult_wrapper.mo .agree a,
+#consult_wrapper.mo .smspush label {
+    font-size: 38px;
+}
+#consult_wrapper.mo .formGroup.selectOpt,
+#consult_wrapper.mo label.error {
+	font-size: 40px;
+}
+ #consult_wrapper.mo label.error {
+	display: block;
+    line-height: 1.4;
+    margin-bottom: 70px;
+}
+#consult_wrapper.mo .reserveAccordion .selectList.timeList .radioBox label {
+	font-size: 40px;
+}
+
+/* 완료 팝업 */
+.pop_info {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	border: 0;
+	margin: 0 auto;
+	background: rgba(0,0,0,0.7);
+	z-index: 100;
+}
+.pop_info_cont {
+	width: 810px;
+	height: 890px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+	box-sizing: border-box;
+	font-size: 42px;
+	font-weight: 400;
+	color: #000;
+	letter-spacing: -2px;
+	line-height: 1.5;
+}
+.pop_info_cont p {
+	font-size: 60px;
+	font-weight: 400;
+	color: #000;
+	letter-spacing: -3px;
+	line-height: 1.5;
+	margin-top: 100px;
+	margin-bottom: 90px;
+}
+.pop_info_cont p em {
+	color: #ea4da4;
+}
+.pop_info_cont .ok-btn {
+	width: 480px;
+	height: 150px;
+	background: #ea4da4;
+	color: #fff;
+	font-size: 60px;
+	font-weight: 400;
+	letter-spacing: -6px;
+	border: 0;
+	border-radius: 75px;
+	margin-top: 70px;
+	outline: 0;
+}
+
+.pc .pop_info_cont {
+	width: 600px;
+	height: 650px;
+	font-size: 30px;
+}
+.pc .pop_info_cont p {
+	font-size: 40px;
+	margin-top: 72px;
+	margin-bottom: 50px;
+}
+.pc .pop_info_cont .ok-btn {
+	width: 380px;
+	height: 100px;
+	font-size: 40px;
+}
+
+.form_wrapper .noti {
+	display: none;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.2;
+	color: #dc0000;
+	margin-top: 10px;
+	clear: both;
+}
+.mo .form_wrapper .noti {
+	font-size: 32px;
+}
+
+/* 지점별 지도 */
+.map_box {
+	position: relative;
+}
+.map_box .currentJijum {
+	position: relative;
+	width: 100%;
+	height: 170px;
+	line-height: 170px;
+	border: 0;
+	outline: 0;
+	background: #fff;
+	font-family: 'Noto Sans KR';
+	font-size: 42px;
+	font-weight: 400;
+	color: #000;
+	letter-spacing: -3px;
+	cursor: pointer;
+	padding: 0;
+}
+.map_box .currentJijum span {
+	font-weight: 600;
+	margin-left: 18px;
+}
+.map_box:not(.noSelect) .currentJijum::after {
+	display: inline-block;
+	content: '';
+	position: relative;
+	top: -4px;
+	width: 41px;
+	height: 23px;
+	background: url(https://www.ppeum1.com/new/event/img/sns/common/ico_dropdown.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-left: 58px;
+}
+.map_box .address {
+	position: absolute;
+	width: 100%;
+	height: 150px;
+	background: rgba(0,0,0,0.7);
+	bottom: 0px;
+	z-index: 2;
+	font-size: 39px;
+	font-weight: 400;
+	color: #fff;
+	letter-spacing: -1px;
+	text-align: right;
+	line-height: 1.5;
+	padding-top: 16px;
+	padding-right: 60px;
+	box-sizing: border-box;
+}
+#jijum-map-select * {
+	font-family: 'Noto Sans KR'
+}
+#jijum-map-select {
+	display: none;
+	position: fixed;
+	width: 1080px;
+	height: 100%;
+	top: 0;
+	left: 50%;
+	bottom: 0;
+	margin: 0 auto;
+	margin-left: -540px;
+	background: #fff;
+	z-index: 30;
+	overflow: hidden;
+}
+
+#jijum-map-select > h5 {
+	position: relative;
+	height: 80px;
+	line-height: 80px;
+	font-size: 21px;
+	font-weight: 400;
+	letter-spacing: -1.5px;
+	text-align: center;
+	color: #000;
+}
+#jijum-map-select .jijum-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	background: #fff;
+	border: 0;
+	outline: 0;
+	color: transparent;
+    padding: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+#jijum-map-select .jijum-close::before,
+#jijum-map-select .jijum-close::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	content: '';
+	display: block;
+	width: 3px;
+	height: 24px;
+	background: #000;
+}
+#jijum-map-select .jijum-close::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+#jijum-map-select .jijum-close::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#jijum-map-select .list {
+	overflow: hidden;
+	overflow-y: auto;
+	height: calc(100% - 88px);
+	border-top: 8px solid #f6f8f9;
+}
+#jijum-map-select .list > li {
+	border-bottom: 1px solid #fff;
+}
+#jijum-map-select .list li em {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	display: block;
+	background: #f9538b;
+	font-size: 24px;
+	font-weight: 300;
+	color: #fff;
+	padding-left: 72px;
+	letter-spacing: -1px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+#jijum-map-select .list li em::after {
+	content: '';
+    content: '';
+    position: absolute;
+    right: 74px;
+    top: 50%;
+    width: 24px;
+    height: 14px;
+	margin-top: -7px;
+    background: url(https://www.ppeum1.com/new/event/img/sns/common/ico_dropdown_w.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#jijum-map-select .list li.on em::after {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+#jijum-map-select .list li > ul {
+	display: none;
+	padding: 0;
+	overflow: auto;
+}
+#jijum-map-select .list li > ul li {
+	line-height: 75px;
+	font-size: 21px;
+	color: #8d8d8d;
+	padding-left: 72px;
+	color: #000;
+	cursor: pointer;
+	letter-spacing: -1.5px;
+	background: #f6f8f9;
+}
+#jijum-map-select .list li > ul li.selected {
+	background: #fff;
+}
+
+/* 지도 모바일 */
+#jijum-map-select.mo > h5 {
+	height: 120px;
+	line-height: 120px;
+	font-size: 42px;
+}
+#jijum-map-select.mo .list li em {
+	height: 120px;
+	line-height: 120px;
+	font-size: 48px;
+}
+#jijum-map-select.mo .list li > ul li {
+    line-height: 115px;
+    font-size: 42px;
+}
+
+#jijum-map-select.mo .list li em::after {
+    width: 36px;
+    height: 21px;
+	margin-top: -10px;
+}
+
+#jijum-map-select.mo .jijum-close {
+	width: 120px;
+	height: 120px;
+}
+#jijum-map-select.mo .jijum-close::before,
+#jijum-map-select.mo .jijum-close::after {
+	width: 6px;
+	height: 48px;
+	background: #000;
+}
